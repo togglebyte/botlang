@@ -25,7 +25,7 @@ where
             .for_each(|(key, value)| self.variables.insert_ro(key, value));
     }
 
-    pub(crate) fn call(&self, key: &str, args: Vec<crate::Expression>) -> crate::Expression {
-        self.functions.call(key, args, &self.user_data)
+    pub(crate) fn call(&self, key: &str, args: Vec<crate::Expression>, caller: &str) -> crate::Expression {
+        self.functions.call(key, args, &self.user_data, caller)
     }
 }

@@ -41,7 +41,7 @@ where
         self.context.load_read_only(values);
     }
 
-    pub fn run(&mut self, src: &str) -> Option<&str> {
+    pub fn run(&mut self, src: &str, caller: &str) -> Option<&str> {
         self.output.clear();
         let tokens = match lex(src) {
             Ok(t) => t,
@@ -59,7 +59,7 @@ where
             }
         };
 
-        let expr = eval(expr, &mut self.context);
+        let expr = eval(expr, &mut self.context, caller);
         match expr {
             Expression::Null => None,
             expr => {

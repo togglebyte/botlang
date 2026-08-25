@@ -183,7 +183,7 @@ impl<'src> Lexer<'src> {
 
         loop {
             match self.chars.peek() {
-                Some(c @ ('a'..='z' | 'A'..='Z' | '_')) => {
+                Some(c @ ('a'..='z' | 'A'..='Z' | '_' | '0'..='9')) => {
                     buffer.push(*c);
                     self.consume();
                 }

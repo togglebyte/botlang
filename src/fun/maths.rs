@@ -1,6 +1,6 @@
 use crate::expression::Expression;
 
-pub(super) fn sin<U>(args: &[Expression], _: &U) -> Expression {
+pub(super) fn sin<U>(args: &[Expression], _: &U, _: &str) -> Expression {
     if args.len() != 1 {
         return Expression::Null;
     }
@@ -14,7 +14,7 @@ pub(super) fn sin<U>(args: &[Expression], _: &U) -> Expression {
     Expression::Float(num.sin())
 }
 
-pub(super) fn asin<U>(args: &[Expression], _: &U) -> Expression {
+pub(super) fn asin<U>(args: &[Expression], _: &U, _: &str) -> Expression {
     if args.len() != 1 {
         return Expression::Null;
     }
@@ -28,7 +28,7 @@ pub(super) fn asin<U>(args: &[Expression], _: &U) -> Expression {
     Expression::Float(num.asin())
 }
 
-pub(super) fn cos<U>(args: &[Expression], _: &U) -> Expression {
+pub(super) fn cos<U>(args: &[Expression], _: &U, _: &str) -> Expression {
     if args.len() != 1 {
         return Expression::Null;
     }
@@ -42,7 +42,7 @@ pub(super) fn cos<U>(args: &[Expression], _: &U) -> Expression {
     Expression::Float(num.cos())
 }
 
-pub(super) fn pow<U>(args: &[Expression], _: &U) -> Expression {
+pub(super) fn pow<U>(args: &[Expression], _: &U, _: &str) -> Expression {
     if args.len() != 2 {
         return Expression::Null;
     }
